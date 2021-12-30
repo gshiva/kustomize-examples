@@ -19,10 +19,14 @@ https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/
 4. display config without customization
     ```
     kustomize build frontend-app/base/
+    # OR
+    kubectl kustomize frontend-app/base/
     ```
 5. display config with `dev` customization
     ```
     kustomize build frontend-app/overlays/dev
+    # OR
+    kubectl kustomize frontend-app/overlays/dev/
     ```
 6. apply `dev` customized app to k8s cluster
     ```
