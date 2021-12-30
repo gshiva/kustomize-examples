@@ -7,16 +7,15 @@ Follow https://www.densify.com/kubernetes-tools/kustomize with slight adjustment
 https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/
 2. install https://kubernetes.io/docs/tasks/tools/
 3. example K8S app files under `frontend-app` directory as follows
-
-- base/
-  - deployment.yaml
-  - service.yaml
-  - hpa.yaml
-  - kustomization.yaml
-- overlays/
-  - dev/
-    - kustomization.yaml
-    - hpa.yaml
+   - base/
+     - deployment.yaml
+     - service.yaml
+     - hpa.yaml
+     - kustomization.yaml
+   - overlays/
+     - dev/
+       - kustomization.yaml
+       - hpa.yaml
 4. display config without customization
     ```
     kustomize build frontend-app/base/
