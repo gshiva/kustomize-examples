@@ -19,11 +19,11 @@ https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/
     - hpa.yaml
 4. display config without customization
     ```
-    kustomize.exe build frontend-app/base/
+    kustomize build frontend-app/base/
     ```
 5. display config with `dev` customization
     ```
-    kustomize.exe build frontend-app/overlays/dev
+    kustomize build frontend-app/overlays/dev
     ```
 6. apply `dev` customized app to k8s cluster
     ```
