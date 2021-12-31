@@ -34,3 +34,23 @@ https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/
     #OR
     kubectl apply -k  overlays/dev
     ```
+
+## Example: volume
+
+This example uses a slightly modified kubernetes [wordpress example](https://github.com/kubernetes-sigs/kustomize/blob/master/examples/wordpress/README.md) to demonstrate using kustomize to switch out a yaml deployment file `persistentVolumeClaim` [volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) to a confgMap [volume](https://kubernetes.io/docs/concepts/storage/volumes/) using kustomize overlays.
+
+
+1. install [kustomize](https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/)
+2. install [kubectl](https://kubernetes.io/docs/tasks/tools/)
+3. example K8S app files under github example as follows
+WIP
+
+
+
+
+
+
+
+- other references
+https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/configmapgenerator/
+https://blog.stack-labs.com/code/kustomize-101/
