@@ -1,20 +1,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: mysql
+  labels:
+    app: mysql
 spec:
   selector:
-  matchLabels:
-    app: frontend-deployment
+    matchLabels:
+      app: mysql
+  strategy:
+    type: Recreate
   template:
-  metadata:
-    labels:
-      app: frontend-deployment
-  spec:
-    containers:
-    - name: app
-      image: foo/bar:latest
-      ports:
-      - name: http
-        containerPort: 8080
-        protocol: TCP
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - image: mysql:5.6
+        name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        emptyDir: {}
+#from https://github.com/kubernetes-sigs/kustomize/blob/master/examples/wordpress/mysql/deployment.yaml
