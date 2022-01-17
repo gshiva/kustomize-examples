@@ -1,0 +1,19 @@
+version: '3.5'
+
+volumes:
+  mysql_data: {}
+
+networks:
+  monitoring-app:
+    driver: bridge
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:5.6
+    volumes:
+      - mysql_data:/data
+    networks:
+      - monitoring-app
+    ports:
+      - 3306:3306/tcp
