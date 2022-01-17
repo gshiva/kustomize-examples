@@ -37,7 +37,7 @@ https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/
 
 ## Example: volume
 
-This example uses a slightly modified kubernetes [mysql example](https://github.com/kubernetes-sigs/kustomize/tree/master/examples/mySql) to demonstrate using kustomize to switch out a yaml deployment file `persistentVolumeClaim` [volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) to a confgMap [volume](https://kubernetes.io/docs/concepts/storage/volumes/) using kustomize overlays.
+This example uses a slightly modified kubernetes [mysql example](https://github.com/kubernetes-sigs/kustomize/tree/master/examples/mySql) to demonstrate using kustomize to switch out a yaml deployment file `persistentVolumeClaim` [volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) to a confgMap [volume](https://kubernetes.io/docs/concepts/storage/volumes/#configmap) using kustomize overlays.
 
 
 1. install [kustomize](https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/)
